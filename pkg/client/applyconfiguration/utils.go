@@ -135,6 +135,8 @@ func ForKind(kind schema.GroupVersionKind) interface{} {
 		return &monitoringv1.PrometheusTracingConfigApplyConfiguration{}
 	case v1.SchemeGroupVersion.WithKind("PrometheusWebSpec"):
 		return &monitoringv1.PrometheusWebSpecApplyConfiguration{}
+	case v1.SchemeGroupVersion.WithKind("ProxyConfig"):
+		return &monitoringv1.ProxyConfigApplyConfiguration{}
 	case v1.SchemeGroupVersion.WithKind("QuerySpec"):
 		return &monitoringv1.QuerySpecApplyConfiguration{}
 	case v1.SchemeGroupVersion.WithKind("QueueConfig"):
@@ -157,6 +159,8 @@ func ForKind(kind schema.GroupVersionKind) interface{} {
 		return &monitoringv1.SafeAuthorizationApplyConfiguration{}
 	case v1.SchemeGroupVersion.WithKind("SafeTLSConfig"):
 		return &monitoringv1.SafeTLSConfigApplyConfiguration{}
+	case v1.SchemeGroupVersion.WithKind("ScrapeClass"):
+		return &monitoringv1.ScrapeClassApplyConfiguration{}
 	case v1.SchemeGroupVersion.WithKind("SecretOrConfigMap"):
 		return &monitoringv1.SecretOrConfigMapApplyConfiguration{}
 	case v1.SchemeGroupVersion.WithKind("ServiceMonitor"):
@@ -175,6 +179,8 @@ func ForKind(kind schema.GroupVersionKind) interface{} {
 		return &monitoringv1.ThanosRulerSpecApplyConfiguration{}
 	case v1.SchemeGroupVersion.WithKind("ThanosRulerStatus"):
 		return &monitoringv1.ThanosRulerStatusApplyConfiguration{}
+	case v1.SchemeGroupVersion.WithKind("ThanosRulerWebSpec"):
+		return &monitoringv1.ThanosRulerWebSpecApplyConfiguration{}
 	case v1.SchemeGroupVersion.WithKind("ThanosSpec"):
 		return &monitoringv1.ThanosSpecApplyConfiguration{}
 	case v1.SchemeGroupVersion.WithKind("TLSConfig"):
@@ -257,8 +263,6 @@ func ForKind(kind schema.GroupVersionKind) interface{} {
 		return &monitoringv1alpha1.PrometheusAgentApplyConfiguration{}
 	case v1alpha1.SchemeGroupVersion.WithKind("PrometheusAgentSpec"):
 		return &monitoringv1alpha1.PrometheusAgentSpecApplyConfiguration{}
-	case v1alpha1.SchemeGroupVersion.WithKind("ProxyConfig"):
-		return &monitoringv1alpha1.ProxyConfigApplyConfiguration{}
 	case v1alpha1.SchemeGroupVersion.WithKind("PushoverConfig"):
 		return &monitoringv1alpha1.PushoverConfigApplyConfiguration{}
 	case v1alpha1.SchemeGroupVersion.WithKind("Receiver"):

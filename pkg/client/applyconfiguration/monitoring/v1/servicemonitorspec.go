@@ -38,6 +38,8 @@ type ServiceMonitorSpecApplyConfiguration struct {
 	LabelValueLengthLimit *uint64                              `json:"labelValueLengthLimit,omitempty"`
 	KeepDroppedTargets    *uint64                              `json:"keepDroppedTargets,omitempty"`
 	AttachMetadata        *AttachMetadataApplyConfiguration    `json:"attachMetadata,omitempty"`
+	ScrapeClassName       *string                              `json:"scrapeClass,omitempty"`
+	BodySizeLimit         *monitoringv1.ByteSize               `json:"bodySizeLimit,omitempty"`
 }
 
 // ServiceMonitorSpecApplyConfiguration constructs an declarative configuration of the ServiceMonitorSpec type for use with
@@ -166,5 +168,21 @@ func (b *ServiceMonitorSpecApplyConfiguration) WithKeepDroppedTargets(value uint
 // If called multiple times, the AttachMetadata field is set to the value of the last call.
 func (b *ServiceMonitorSpecApplyConfiguration) WithAttachMetadata(value *AttachMetadataApplyConfiguration) *ServiceMonitorSpecApplyConfiguration {
 	b.AttachMetadata = value
+	return b
+}
+
+// WithScrapeClassName sets the ScrapeClassName field in the declarative configuration to the given value
+// and returns the receiver, so that objects can be built by chaining "With" function invocations.
+// If called multiple times, the ScrapeClassName field is set to the value of the last call.
+func (b *ServiceMonitorSpecApplyConfiguration) WithScrapeClassName(value string) *ServiceMonitorSpecApplyConfiguration {
+	b.ScrapeClassName = &value
+	return b
+}
+
+// WithBodySizeLimit sets the BodySizeLimit field in the declarative configuration to the given value
+// and returns the receiver, so that objects can be built by chaining "With" function invocations.
+// If called multiple times, the BodySizeLimit field is set to the value of the last call.
+func (b *ServiceMonitorSpecApplyConfiguration) WithBodySizeLimit(value monitoringv1.ByteSize) *ServiceMonitorSpecApplyConfiguration {
+	b.BodySizeLimit = &value
 	return b
 }
